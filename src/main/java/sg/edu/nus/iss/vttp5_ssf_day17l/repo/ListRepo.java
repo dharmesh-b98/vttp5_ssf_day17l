@@ -42,6 +42,7 @@ public class ListRepo {
 
     public List<String> getList(String key) {
         List<String> list = template.opsForList().range(key, 0, -1);
+        System.out.println("repo level" + list.size() + "\n\n\n\n\n\n\n\n");
         return list;
     }
 
