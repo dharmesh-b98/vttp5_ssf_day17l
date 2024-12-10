@@ -42,4 +42,6 @@ ENV SERVER_PORT=3000
 
 EXPOSE ${SERVER_PORT}
 
+HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 CMD curl -s -f http://localhost:3000/mnv/health || exit 1
+
 ENTRYPOINT ["java", "-jar", "vttp5_ssf_day17l.jar","--server.port=${SERVER_PORT}"]
